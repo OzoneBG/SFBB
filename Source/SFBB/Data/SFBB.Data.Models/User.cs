@@ -6,6 +6,7 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
     using System;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class User : IdentityUser, IAuditInfo, IDeletableEntity
     {
@@ -29,6 +30,7 @@
 
         public DateTime? ModifiedOn { get; set; }
 
+        [Index]
         public bool IsDeleted { get; set; }
 
         public DateTime? DeletedOn { get; set; }
