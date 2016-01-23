@@ -166,7 +166,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -245,6 +244,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\SFBB.Data.Models\SFBB.Data.Models.csproj">
+      <Project>{993e2628-0e16-46c2-adaf-0f996af93ecb}</Project>
+      <Name>SFBB.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\SFBB.Data\SFBB.Data.csproj">
+      <Project>{ca653921-7523-488a-b7d4-c014289906e5}</Project>
+      <Name>SFBB.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
