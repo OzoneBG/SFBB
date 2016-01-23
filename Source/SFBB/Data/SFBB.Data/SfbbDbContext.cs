@@ -23,6 +23,8 @@
 
         public IDbSet<Tag> Tags { get; set; }
 
+        public IDbSet<Thread> Threads { get; set; }
+
         public override int SaveChanges()
         {
             ApplyAuditInfoRules();
