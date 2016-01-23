@@ -246,6 +246,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\SFBB.Data.Common\SFBB.Data.Common.csproj">
+      <Project>{3e0e71ba-0bee-49b9-b046-78e774c6dbf4}</Project>
+      <Name>SFBB.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\SFBB.Data.Models\SFBB.Data.Models.csproj">
       <Project>{993e2628-0e16-46c2-adaf-0f996af93ecb}</Project>
       <Name>SFBB.Data.Models</Name>
