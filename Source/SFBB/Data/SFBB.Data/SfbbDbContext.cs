@@ -25,6 +25,10 @@
 
         public IDbSet<Thread> Threads { get; set; }
 
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Forum> Forums { get; set; }
+
         public override int SaveChanges()
         {
             ApplyAuditInfoRules();

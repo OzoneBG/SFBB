@@ -1,11 +1,11 @@
-﻿@model IEnumerable<SFBB.Data.Models.Thread>
+﻿@model IEnumerable<SFBB.Web.ViewModels.Home.IndexCategoriesForumsViewModel>
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div>
-    @foreach(var thread in Model)
+    @foreach(var cat in Model)
     {
-        <p>@thread.Title</p>
+        <p>@cat.Title</p>
     }
 </div>
