@@ -21,7 +21,6 @@
         {
             var cats = categories.All().Project().To<IndexCategoriesForumsViewModel>();
 
-
             return View(cats);
         }
     }
