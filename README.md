@@ -3,5 +3,3 @@ A simple forum using BB
 
 TODO
 =============
-
-* Auto mapper
