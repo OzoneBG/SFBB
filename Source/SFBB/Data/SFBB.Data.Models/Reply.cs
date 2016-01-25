@@ -1,21 +1,20 @@
 ﻿namespace SFBB.Data.Models
 {
+    using SFBB.Data.Common.Models;
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using SFBB.Data.Common.Models;
-    
-    public class Thread : AuditInfo, IDeletableEntity
+    public class Reply : AuditInfo, IDeletableEntity
     {
         [Key]
         public int Id { get; set; }
 
-        [MaxLength(100)]
         public string Title { get; set; }
 
-        public Forum Forum { get; set; }
+        public string Content { get; set; }
 
-        public virtual ICollection<Reply> Replies { get; set; }
+        public Thread Thread { get; set; }
 
         public bool IsDeleted { get; set; }
 

@@ -18,13 +18,13 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SfbbDbContext, Configuration>());
         }
 
-        public IDbSet<Tag> Tags { get; set; }
-
         public IDbSet<Thread> Threads { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
 
         public IDbSet<Forum> Forums { get; set; }
+
+        public IDbSet<Reply> Replies { get; set; }
         
         public static SfbbDbContext Create()
         {

@@ -1,7 +1,7 @@
 ﻿namespace SFBB.Data.Models
 {
     using System;
-
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,6 +16,10 @@
         public string Title { get; set; }
 
         public string Description { get; set; }
+
+        public Category Category { get; set; }
+
+        public virtual ICollection<Thread> Threads { get; set; }
 
         public bool IsDeleted { get; set; }
 

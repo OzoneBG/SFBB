@@ -19,9 +19,6 @@
 
         public ActionResult Index()
         {
-            this.categories.Delete(4);
-            this.categories.SaveChanges();
-
             var cats = this.categories.All().Project().To<IndexCategoriesForumsViewModel>();
 
             return View(cats);

@@ -20,3 +20,18 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar .nav > li > a {
+    color: orange;
+}
+
+.navbar .nav > li > a:hover {
+    color: orange;
+    text-shadow: 0 0 20px red;
+}
+
+.vcenter {
+    vertical-align: middle;
+    display: inline-block;
+    float:none;
+}
