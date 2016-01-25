@@ -9,17 +9,20 @@
 
     public class HomeController : Controller
     {
-        private IRepository<Category> categories;
+        private readonly IDeletableEntityRepository<Category> categories;
 
 
-        public HomeController(IRepository<Category> categories)
+        public HomeController(IDeletableEntityRepository<Category> categories)
         {
             this.categories = categories;
         }
 
         public ActionResult Index()
         {
-            var cats = categories.All().Project().To<IndexCategoriesForumsViewModel>();
+            this.categories.Delete(4);
+            this.categories.SaveChanges();
+
+            var cats = this.categories.All().Project().To<IndexCategoriesForumsViewModel>();
 
             return View(cats);
         }

@@ -10,14 +10,13 @@ namespace SFBB.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            //TO DO: Remove in production
-            AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationsEnabled = true;
+            /////TO DO: Remove in production
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(SfbbDbContext context)
-        {
-         
+        {   
         }
     }
 }

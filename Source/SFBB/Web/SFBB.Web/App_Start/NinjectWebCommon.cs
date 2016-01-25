@@ -13,6 +13,7 @@ namespace SFBB.Web.App_Start
     using System.Data.Entity;
     using SFBB.Data;
     using SFBB.Data.Common.Repository;
+    using SFBB.Data.Models;
 
     public static class NinjectWebCommon 
     {
@@ -65,8 +66,12 @@ namespace SFBB.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<DbContext>().To<SfbbDbContext>();
+
+            kernel.Bind(typeof(IDeletableEntityRepository<>)).To(typeof(DeletableEntityRepository<>));
+
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
-            kernel.Bind(typeof(IDeletableEntityRepository<>)).To(typeof(GenericRepository<>));
+            
+            kernel.Bind(typeof(IRepository<Category>)).To(typeof(DeletableEntityRepository<Category>));
         }        
     }
 }

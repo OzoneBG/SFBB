@@ -1,9 +1,11 @@
 ﻿namespace SFBB.Data.Models
 {
-    using SFBB.Data.Common.Models;
     using System;
+
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
+    using SFBB.Data.Common.Models;
 
     public class Category : AuditInfo, IDeletableEntity
     {

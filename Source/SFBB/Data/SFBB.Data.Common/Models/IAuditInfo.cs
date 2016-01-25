@@ -1,5 +1,4 @@
 ﻿namespace SFBB.Data.Common.Models
-
 {
     using System;
 

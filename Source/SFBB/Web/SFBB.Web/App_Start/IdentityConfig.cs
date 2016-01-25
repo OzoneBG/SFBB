@@ -1,21 +1,18 @@
 ﻿namespace SFBB.Web
 {
     using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
-    using System.Web;
+
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security;
-    using SFBB.Web.Models;
-    using SFBB.Data.Models;
-    using SFBB.Data;
 
+    using SFBB.Data;
+    using SFBB.Data.Models;
+    
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
@@ -86,6 +83,7 @@
                 manager.UserTokenProvider = 
                     new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
+
             return manager;
         }
     }
@@ -98,14 +96,14 @@
         {
         }
 
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(User user)
-        {
-            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
-        }
-
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        }
+
+        public override Task<ClaimsIdentity> CreateUserIdentityAsync(User user)
+        {
+            return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
         }
     }
 }

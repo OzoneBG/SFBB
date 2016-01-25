@@ -1,8 +1,9 @@
 ﻿namespace SFBB.Data.Models
 {
-    using SFBB.Data.Common.Models;
     using System.ComponentModel.DataAnnotations;
 
+    using SFBB.Data.Common.Models;
+    
     public class Thread : AuditInfo, IDeletableEntity
     {
         [Key]
