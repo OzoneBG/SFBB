@@ -1,0 +1,34 @@
+﻿@model SFBB.Web.ViewModels.Home.IndexCategoriesForumsViewModel
+@{
+    ViewBag.Title = "Forums of" + Model.Title;
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li><span class="glyphicon glyphicon-home"></span>&nbsp; @Html.ActionLink("Forum", "Index", "Home")</li>
+        <li class="active"><span>@Model.Title</span></li>
+    </ol>
+</div>
+<div class="container">
+    <div class="row table-bordered" style="background-color: rgb(47, 47, 47)">
+        <div class="col-md-6">@Model.Title</div>
+        <div class="col-md-2">Threads/Posts</div>
+        <div class="col-md-4">Last post</div>
+    </div>
+    <div id="wrapper">
+        @foreach(var forum in Model.Forums)
+        {
+        <div class="row no-pad">
+            <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
+                <div class="col-md-5">
+                    <p>@forum.Title</p>
+                    <p>@forum.Description</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Threads: 0</p>
+                    <p>Posts: 0</p>
+                </div>
+                <div class="col-md-4">No threads started.</div>
+        </div>
+        }
+    </div>
+</div>

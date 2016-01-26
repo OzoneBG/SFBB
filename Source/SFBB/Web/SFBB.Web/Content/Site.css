@@ -35,3 +35,16 @@ textarea {
     display: inline-block;
     float:none;
 }
+
+div.row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+
+div > p {
+    padding-bottom: 0;
+    margin-bottom:0;
+}
