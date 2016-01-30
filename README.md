@@ -3,7 +3,5 @@ A simple forum using BB
 
 TODO
 =============
-Need to fix expanding of each category
-Add links for each forum to list threads
-Need to create something to make threads/posts show
-Need to add display last post
+Fix ViewModels for Index and GetForumsByCategory
+Add GET actions for main menu and output not implemented message.
