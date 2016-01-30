@@ -14,6 +14,8 @@
 
         public string Content { get; set; }
 
+        public User Author { get; set; }
+
         public Thread Thread { get; set; }
 
         public bool IsDeleted { get; set; }

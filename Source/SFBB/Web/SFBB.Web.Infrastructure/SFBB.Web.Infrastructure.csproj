@@ -58,6 +58,12 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\SFBB.Data.Models\SFBB.Data.Models.csproj">
+      <Project>{993e2628-0e16-46c2-adaf-0f996af93ecb}</Project>
+      <Name>SFBB.Data.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

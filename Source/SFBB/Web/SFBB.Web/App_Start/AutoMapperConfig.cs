@@ -1,4 +1,4 @@
-﻿namespace SFBB.Web.Infrastructure.Mapping
+﻿namespace SFBB.Web
 {
     using System;
     using System.Collections.Generic;
@@ -7,6 +7,8 @@
 
     using AutoMapper;
     using SFBB.Data.Models;
+    using SFBB.Web.Infrastructure.Mapping;
+    using SFBB.Web.ViewModels.Threads;
 
     public class AutoMapperConfig
     {

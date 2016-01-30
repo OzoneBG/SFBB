@@ -13,6 +13,10 @@
         [MaxLength(100)]
         public string Title { get; set; }
 
+        public string Content { get; set; }
+
+        public User Author { get; set; }
+
         public Forum Forum { get; set; }
 
         public virtual ICollection<Reply> Replies { get; set; }

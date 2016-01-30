@@ -69,9 +69,11 @@ namespace SFBB.Web.App_Start
 
             kernel.Bind(typeof(IDeletableEntityRepository<>)).To(typeof(DeletableEntityRepository<>));
 
-            kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
-            
-            kernel.Bind(typeof(IRepository<Category>)).To(typeof(DeletableEntityRepository<Category>));
+            //kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
+
+            /*kernel.Bind(typeof(IRepository<Forum>)).To(typeof(DeletableEntityRepository<Forum>));
+
+            kernel.Bind(typeof(IRepository<Category>)).To(typeof(DeletableEntityRepository<Category>));*/
         }        
     }
 }

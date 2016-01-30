@@ -174,6 +174,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GenericRepository.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ThreadsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,8 +194,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\Category\GetByCategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexCategoriesForumsViewModel.cs" />
+    <Compile Include="ViewModels\Threads\ThreadsByForumViewModel.cs" />
+    <Compile Include="ViewModels\Threads\ThreadsInformationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Images\DefaultForumIcon.ico" />
@@ -267,9 +270,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Category\GetForumsByCategory.cshtml" />
+    <Content Include="Views\Threads\ThreadsByForum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

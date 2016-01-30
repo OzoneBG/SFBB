@@ -1,10 +1,8 @@
 ﻿namespace SFBB.Web.Controllers
 {
-    using SFBB.Data;
     using SFBB.Data.Common.Repository;
     using SFBB.Data.Models;
     using System.Web.Mvc;
-    using AutoMapper;
     using AutoMapper.QueryableExtensions;
     using SFBB.Web.ViewModels.Home;
     using System.Linq;
