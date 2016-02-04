@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SFBB.Web.ViewModels.Home.IndexCategoriesForumsViewModel>
+﻿@model IEnumerable<SFBB.Web.ViewModels.Home.IndexViewModel>
 @{
     ViewBag.Title = "Forums";
     int i = 1;
@@ -16,28 +16,35 @@
             <div class="col-md-2">Threads/Posts</div>
             <div class="col-md-3">Last post</div>
             <div class="col-md-1 text-right">
-                <!--<button data-toggle="collapse" data-target="#wrapper@(i)" type="button" class="btn btn-default btn-sm">
-                    <span  class="glyphicon glyphicon-plus"></span>
-                </button>-->
-                <span data-toggle="collapse" data-target="#wrapper@(i)" class="glyphicon glyphicon-plus"></span>
+                <div data-toggle="collapse" data-target="#wrapper@(i)" class="glyphicon glyphicon-chevron-up" onclick=""></div>
             </div>
         </div>
         <div id="wrapper@(i++)" class="collapse in">
             @foreach (var forum in category.Forums)
             {
-            <div class="row no-pad">
-                <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
-                <div class="col-md-5">
-                    <p class="">@Html.ActionLink(forum.Title, "ThreadsByForum", "Threads", new { id = forum.Id }, new { })</p>
-                    <p>@forum.Description</p>
+                <div class="row no-pad">
+                    <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
+                    <div class="col-md-5">
+                        <p class="">@Html.ActionLink(forum.Title, "ThreadsByForum", "Threads", new { id = forum.Id }, new { })</p>
+                        <p>@forum.Description</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Threads: @forum.TotalThreads</p>
+                        <p>Posts: @(forum.TotalThreads + forum.TotalPosts)</p>
+                    </div>
+                    <div class="col-md-4">
+                        @if(forum.LastPostName != null)
+                        {
+                            @forum.LastPostName <br />
+                            @forum.LastPostUser @:on @forum.LastPostDate
+                        }
+                        else
+                        {
+                            @:No threads started.
+                        }
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    <p>Threads: 0</p>
-                    <p>Posts: 0</p>
-                </div>
-                <div class="col-md-4">No threads started.</div>
-            </div>
             }
         </div>
-        }
-    </div>
+    }
+</div>

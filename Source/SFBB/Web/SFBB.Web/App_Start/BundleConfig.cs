@@ -21,6 +21,9 @@
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.slate.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/functions").Include(
+                    "~/Scripts/functions.js"));
         }
     }
 }

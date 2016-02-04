@@ -16,6 +16,8 @@
 
         public User Author { get; set; }
 
+        public int ThreadId { get; set; }
+
         public Thread Thread { get; set; }
 
         public bool IsDeleted { get; set; }

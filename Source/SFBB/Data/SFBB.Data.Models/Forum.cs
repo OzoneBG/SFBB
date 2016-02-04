@@ -10,6 +10,13 @@
     [Table("Forums")]
     public class Forum : AuditInfo, IDeletableEntity
     {
+        private ICollection<Thread> threads;
+
+        public Forum()
+        {
+            this.threads = new HashSet<Thread>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -17,9 +24,15 @@
 
         public string Description { get; set; }
 
+        public int CategoryId { get; set; }
+
         public virtual Category Category { get; set; }
 
-        public virtual ICollection<Thread> Threads { get; set; }
+        public virtual ICollection<Thread> Threads
+        {
+            get { return this.threads; }
+            set { this.threads = value; }
+        }
 
         public bool IsDeleted { get; set; }
 

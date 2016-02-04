@@ -17,11 +17,11 @@
         }
 
         // GET: Category
-        public ActionResult GetForumsByCategory(int id)
-        {
-            var current = this.categories.All().Where(x => x.Id == id).ProjectTo<IndexCategoriesForumsViewModel>().FirstOrDefault();
-
-            return View(current);
-        }
+        //public ActionResult GetForumsByCategory(int id)
+        //{
+        //    var current = this.categories.All().Where(x => x.Id == id).ProjectTo<IndexCategoriesForumsViewModel>().FirstOrDefault();
+        //
+        //    return View(current);
+        //}
     }
 }
