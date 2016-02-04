@@ -3,6 +3,12 @@ A simple forum using BB
 
 TODO
 =============
-* Fix ViewModels for Index and GetForumsByCategory
-* Add GET actions for main menu and output not implemented message.
+* Views
+	* Read thread and it's replies
+	* View Profile
+
+* Inputs
+	* Post new thread
+	* Reply to a thread
+	* Edit profile
 
