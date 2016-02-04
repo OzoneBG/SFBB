@@ -14,15 +14,9 @@
     {
         private readonly IDeletableEntityRepository<Category> categories;
 
-        private readonly IDeletableEntityRepository<Forum> forums;
-
-        private readonly IDeletableEntityRepository<Thread> threads;
-
-        public HomeController(IDeletableEntityRepository<Category> categories, IDeletableEntityRepository<Forum> forums, IDeletableEntityRepository<Thread> threads)
+        public HomeController(IDeletableEntityRepository<Category> categories)
         {
             this.categories = categories;
-            this.forums = forums;
-            this.threads = threads;
         }
 
         public ActionResult Index()
@@ -30,6 +24,30 @@
             var cats = this.categories.All().ProjectTo<IndexViewModel>().ToList();
 
             return View(cats);
+        }
+
+        //TO DO: Construct area
+        public ActionResult Announcements()
+        {
+            return View();
+        }
+
+        //TO DO: Construct area
+        public ActionResult UnansweredPosts()
+        {
+            return View();
+        }
+
+        //TO DO: Construct area
+        public ActionResult Rules()
+        {
+            return View();
+        }
+
+        //TO DO: Construct area
+        public ActionResult FAQ()
+        {
+            return View();
         }
     }
 }

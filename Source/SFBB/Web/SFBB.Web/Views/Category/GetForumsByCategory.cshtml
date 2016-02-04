@@ -9,16 +9,22 @@
     </ol>
 </div>
 <div class="container">
-    <div class="row table-bordered" style="background-color: rgb(47, 47, 47)">
-        <div class="col-md-6">@Model.Title</div>
-        <div class="col-md-2">Threads/Posts</div>
-        <div class="col-md-4">Last post</div>
-    </div>
-    <div id="wrapper">
-        @foreach(var forum in Model.Forums)
-        { 
-            <div class="row no-pad">
-                <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
+    @if (Model.Forums.Count == 0)
+    {
+        <p class="text-center">No forums</p>
+    }
+    else
+    {
+        <div id="wrapper">
+            <div class="row table-bordered" style="background-color: rgb(47, 47, 47)">
+                <div class="col-md-6">@Model.Title</div>
+                <div class="col-md-2">Threads/Posts</div>
+                <div class="col-md-4">Last post</div>
+            </div>
+            @foreach (var forum in Model.Forums)
+            {
+                <div class="row no-pad">
+                    <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
                     <div class="col-md-5">
                         <p>@Html.ActionLink(forum.Title, "ThreadsByForum", "Threads", new { id = forum.Id }, new { })</p>
                         <p>@forum.Description</p>
@@ -39,7 +45,8 @@
                             @:No threads started.
                         }
                     </div>
-            </div>
-        }
-    </div>
+                </div>
+            }
+        </div>
+    }
 </div>

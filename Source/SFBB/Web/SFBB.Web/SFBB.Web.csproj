@@ -250,7 +250,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.bak.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -275,6 +274,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Category\GetForumsByCategory.cshtml" />
     <Content Include="Views\Threads\ThreadsByForum.cshtml" />
+    <Content Include="Views\Home\Announcements.cshtml" />
+    <Content Include="Views\Home\UnansweredPosts.cshtml" />
+    <Content Include="Views\Home\Rules.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
