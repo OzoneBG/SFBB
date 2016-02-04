@@ -4,7 +4,7 @@
     using SFBB.Data.Models;
     using System.Web.Mvc;
     using AutoMapper.QueryableExtensions;
-    using SFBB.Web.ViewModels.Home;
+    using SFBB.Web.ViewModels.Category;
     using System.Linq;
 
     public class CategoryController : Controller
@@ -16,12 +16,11 @@
             this.categories = categories;
         }
 
-        // GET: Category
-        //public ActionResult GetForumsByCategory(int id)
-        //{
-        //    var current = this.categories.All().Where(x => x.Id == id).ProjectTo<IndexCategoriesForumsViewModel>().FirstOrDefault();
-        //
-        //    return View(current);
-        //}
+        public ActionResult GetForumsByCategory(int id)
+        {
+            var forums = this.categories.All().Where(x => x.Id == id).ProjectTo<ForumsByCategoryViewModel>().FirstOrDefault();
+        
+            return View(forums);
+        }
     }
 }

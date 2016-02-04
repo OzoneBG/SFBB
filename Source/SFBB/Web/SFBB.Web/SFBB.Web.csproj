@@ -194,6 +194,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Category\ForumInfoViewModel.cs" />
+    <Compile Include="ViewModels\Category\ForumsByCategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\ForumInfoViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Threads\ThreadsByForumViewModel.cs" />
@@ -276,7 +278,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

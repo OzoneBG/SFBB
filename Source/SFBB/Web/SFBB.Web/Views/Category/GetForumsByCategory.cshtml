@@ -1,6 +1,6 @@
-﻿@model SFBB.Web.ViewModels.Home.IndexCategoriesForumsViewModel
+﻿@model SFBB.Web.ViewModels.Category.ForumsByCategoryViewModel
 @{
-    ViewBag.Title = "Forums of" + Model.Title;
+    ViewBag.Title = "Forums of " + Model.Title;
 }
 <div class="container">
     <ol class="breadcrumb">
@@ -16,19 +16,30 @@
     </div>
     <div id="wrapper">
         @foreach(var forum in Model.Forums)
-        {
-        <div class="row no-pad">
-            <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
-                <div class="col-md-5">
-                    <p>@Html.ActionLink(forum.Title, "ThreadsByForum", "Threads", new { id = forum.Id }, new { })</p>
-                    <p>@forum.Description</p>
-                </div>
-                <div class="col-md-2">
-                    <p>Threads: 0</p>
-                    <p>Posts: 0</p>
-                </div>
-                <div class="col-md-4">No threads started.</div>
-        </div>
+        { 
+            <div class="row no-pad">
+                <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
+                    <div class="col-md-5">
+                        <p>@Html.ActionLink(forum.Title, "ThreadsByForum", "Threads", new { id = forum.Id }, new { })</p>
+                        <p>@forum.Description</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Threads: @forum.TotalThreads</p>
+                        <p>Posts: @(forum.TotalThreads + forum.TotalReplies)</p>
+                    </div>
+                    <div class="col-md-4">
+                        @if (forum.LastPostName != null)
+                        {
+                            @forum.LastPostName <br />
+                            @forum.LastPostUser <br />
+                            @forum.LastPostDate
+                        }
+                        else
+                        {
+                            @:No threads started.
+                        }
+                    </div>
+            </div>
         }
     </div>
 </div>
