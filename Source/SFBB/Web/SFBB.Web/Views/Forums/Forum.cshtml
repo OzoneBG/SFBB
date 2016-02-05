@@ -1,0 +1,48 @@
+﻿@model SFBB.Web.ViewModels.Threads.ThreadsByForumViewModel
+@{
+    ViewBag.Title = "ThreadsByForum";
+}
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><span class="glyphicon glyphicon-home"></span>&nbsp; @Html.ActionLink("Forum", "Index", "Home")</li>
+        <li><span>@Html.ActionLink(@Model.CategoryName, "Category", "Categories", new { id = 1 }, new { })</span></li>
+        <li class="active"><span>@Model.Title</span></li>
+    </ol>
+</div>
+
+<div class="container">
+    @{
+        if (Model.Threads.Count == 0)
+        {
+            <p class="text-center">No threads</p>
+        }
+        else
+        {
+            <div class="wrapper">
+                @foreach (var thread in Model.Threads)
+                {
+                    <div class="row no-pad">
+                        <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
+                        <div class="col-md-5">
+                            <p>@thread.Title</p>
+                            <p>Started by: @thread.AuthorName, @thread.DateStarted</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>Replies: @thread.ReplyCount</p>
+                            <p>Views: @thread.Views</p>
+                        </div>
+                        @if (thread.ReplyCount == 0)
+                        {
+                            <div class="col-md-4">@thread.AuthorName <br />@thread.DateStarted</div>
+                        }
+                        else
+                        {
+                            <div class="col-md-4">@thread.LastPostBy <br />@thread.LastPostDate</div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>

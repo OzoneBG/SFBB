@@ -183,10 +183,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ForumsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ThreadsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,8 +198,8 @@
     <Compile Include="ViewModels\Category\ForumsByCategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\ForumInfoViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
-    <Compile Include="ViewModels\Threads\ThreadsByForumViewModel.cs" />
-    <Compile Include="ViewModels\Threads\ThreadsInformationViewModel.cs" />
+    <Compile Include="ViewModels\Forums\ThreadsByForumViewModel.cs" />
+    <Compile Include="ViewModels\Forums\ThreadsInformationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Images\DefaultForumIcon.ico" />
@@ -272,12 +272,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Category\GetForumsByCategory.cshtml" />
-    <Content Include="Views\Threads\ThreadsByForum.cshtml" />
     <Content Include="Views\Home\Announcements.cshtml" />
     <Content Include="Views\Home\UnansweredPosts.cshtml" />
     <Content Include="Views\Home\Rules.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Categories\Category.cshtml" />
+    <Content Include="Views\Forums\Forum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

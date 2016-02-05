@@ -12,6 +12,8 @@
 
         public string Title { get; set; }
 
+        public int Views { get; set; }
+
         public int ReplyCount { get; set; }
 
         public string AuthorName { get; set; }

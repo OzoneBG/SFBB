@@ -12,7 +12,7 @@
     @foreach (var category in Model)
     {
         <div class="row table-bordered" style="background-color: rgb(47, 47, 47)">
-            <div class="col-md-6">@Html.ActionLink(category.Title, "GetForumsByCategory", "Category", new { id = category.Id }, new { })</div>
+            <div class="col-md-6">@Html.ActionLink(category.Title, "Category", "Categories", new { id = category.Id }, new { })</div>
             <div class="col-md-2">Threads/Posts</div>
             <div class="col-md-3">Last post</div>
             <div class="col-md-1 text-right">
@@ -25,7 +25,7 @@
                 <div class="row no-pad">
                     <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
                     <div class="col-md-5">
-                        <p class="">@Html.ActionLink(forum.Title, "ThreadsByForum", "Threads", new { id = forum.Id }, new { })</p>
+                        <p class="">@Html.ActionLink(forum.Title, "Forum", "Forums", new { id = forum.Id }, new { })</p>
                         <p>@forum.Description</p>
                     </div>
                     <div class="col-md-2">

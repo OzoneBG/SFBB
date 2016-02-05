@@ -21,7 +21,7 @@
 
         public ActionResult Index()
         {
-            var cats = this.categories.All().ProjectTo<IndexViewModel>().ToList();
+            var cats = this.categories.All().Where(z => z.Forums.Count != 0).ProjectTo<IndexViewModel>().ToList();
 
             return View(cats);
         }
