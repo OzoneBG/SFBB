@@ -14,11 +14,11 @@
 
         public string Content { get; set; }
 
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
 
         public int ThreadId { get; set; }
 
-        public Thread Thread { get; set; }
+        public virtual Thread Thread { get; set; }
 
         public bool IsDeleted { get; set; }
 
