@@ -187,6 +187,7 @@
     <Compile Include="Controllers\ForumsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ThreadsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +201,8 @@
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Forums\ThreadsByForumViewModel.cs" />
     <Compile Include="ViewModels\Forums\ThreadsInformationViewModel.cs" />
+    <Compile Include="ViewModels\Threads\RepliesViewModel.cs" />
+    <Compile Include="ViewModels\Threads\ThreadsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Images\DefaultForumIcon.ico" />
@@ -278,6 +281,7 @@
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Categories\Category.cshtml" />
     <Content Include="Views\Forums\Forum.cshtml" />
+    <Content Include="Views\Threads\Thread.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

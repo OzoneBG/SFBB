@@ -4,7 +4,6 @@ A simple forum using BB
 TODO
 =============
 * Views
-	* Read thread and it's replies
 	* View Profile
 
 * Inputs

@@ -26,7 +26,7 @@
                 <div class="row no-pad">
                     <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
                     <div class="col-md-5">
-                        <p>@Html.ActionLink(forum.Title, "ThreadsByForum", "Threads", new { id = forum.Id }, new { })</p>
+                        <p>@Html.ActionLink(forum.Title, "Forum", "Forums", new { id = forum.Id }, new { })</p>
                         <p>@forum.Description</p>
                     </div>
                     <div class="col-md-2">

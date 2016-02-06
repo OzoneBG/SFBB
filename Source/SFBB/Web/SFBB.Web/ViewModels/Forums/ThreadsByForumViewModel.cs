@@ -16,6 +16,8 @@
 
         //Parent category name
         public string CategoryName { get; set; }
+
+        public int CategoryId { get; set; }
         
         //Thread info
         public ICollection<ThreadsInformationViewModel> Threads { get; set; }
@@ -24,7 +26,8 @@
         {
 
             config.CreateMap<Forum, ThreadsByForumViewModel>()
-                .ForMember(t => t.CategoryName, opt => opt.MapFrom(z => z.Category.Title));
+                .ForMember(t => t.CategoryName, opt => opt.MapFrom(z => z.Category.Title))
+                .ForMember(t => t.CategoryId, opt => opt.MapFrom(z => z.CategoryId));
         }
     }
 }

@@ -11,8 +11,8 @@
 
     public class ForumsController : Controller
     {
-        private IDeletableEntityRepository<Forum> forums;
-        private IDeletableEntityRepository<Thread> threads;
+        private readonly IDeletableEntityRepository<Forum> forums;
+        private readonly IDeletableEntityRepository<Thread> threads;
 
         public ForumsController(IDeletableEntityRepository<Forum> forums, IDeletableEntityRepository<Thread> threads)
         {

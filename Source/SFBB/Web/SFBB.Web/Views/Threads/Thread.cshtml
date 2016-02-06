@@ -1,0 +1,56 @@
+﻿@model SFBB.Web.ViewModels.Threads.ThreadsViewModel
+@{
+    int i = 1;
+    ViewBag.Title = @Model.Title;
+}
+<div class="container">
+    <div class="row table-bordered thread-list-border-thread-top">
+        <div class="col-md-6">
+            @Model.CreatedOn
+        </div>
+        <div class="col-md-6 text-right">
+            [#@(i++)]
+        </div>
+    </div>
+    <div class="row table-bordered thread-list-border-thread-bottom">
+        <div class="col-md-2" style="border-right: solid;">
+            @Model.AuthorName
+            <br />
+            @Model.AuthorJoinDate
+        </div>
+        <div class="col-md-10">
+            @Model.Title
+            <hr class="fix-thread-content" />
+            @Model.Content
+            <hr />
+            [Signature]
+        </div>
+    </div>
+    <div class="spacer"></div>
+    @foreach (var reply in Model.Replies)
+    {
+        <div class="row table-bordered thread-list-border-thread-top">
+            <div class="col-md-6">
+                @reply.CreatedOn
+            </div>
+            <div class="col-md-6 text-right">
+                [#@(i++)]
+            </div>
+        </div>
+        <div class="row table-bordered thread-list-border-thread-bottom">
+            <div class="col-md-2" style="border-right: solid;">
+                @reply.AuthorName
+                <br />
+                @reply.AuthorJoinDate
+            </div>
+            <div class="col-md-10">
+                @reply.Title
+                <hr class="fix-thread-content" />
+                @reply.Content
+                <hr />
+                [Signature]
+            </div>
+        </div>
+        <div class="spacer"></div>
+    }
+</div>

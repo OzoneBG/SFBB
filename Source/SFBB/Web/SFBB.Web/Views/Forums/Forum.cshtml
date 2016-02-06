@@ -6,7 +6,7 @@
 <div class="container">
     <ol class="breadcrumb">
         <li><span class="glyphicon glyphicon-home"></span>&nbsp; @Html.ActionLink("Forum", "Index", "Home")</li>
-        <li><span>@Html.ActionLink(@Model.CategoryName, "Category", "Categories", new { id = 1 }, new { })</span></li>
+        <li><span>@Html.ActionLink(@Model.CategoryName, "Category", "Categories", new { id = Model.CategoryId }, new { })</span></li>
         <li class="active"><span>@Model.Title</span></li>
     </ol>
 </div>
@@ -25,7 +25,7 @@
                     <div class="row no-pad">
                         <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
                         <div class="col-md-5">
-                            <p>@thread.Title</p>
+                            <p>@Html.ActionLink(thread.Title, "Thread", "Threads", new { id = thread.Id }, new { })</p>
                             <p>Started by: @thread.AuthorName, @thread.DateStarted</p>
                         </div>
                         <div class="col-md-2">
