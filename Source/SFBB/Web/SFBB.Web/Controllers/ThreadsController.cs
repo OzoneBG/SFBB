@@ -22,11 +22,23 @@
         // GET: Threads
         public ActionResult Thread(int id)
         {
-            var currentThreads = this.threads.All().Where(x => x.Id == id);
+            var currentThread = this.threads.All().Where(x => x.Id == id);
 
-            var threads = currentThreads.ProjectTo<ThreadsViewModel>().FirstOrDefault();
+            string userIP = this.Request.ServerVariables["REMOTE_ADDR"];
 
-            return View(threads);
+            if (true)
+            {
+                
+            }
+
+            currentThread.FirstOrDefault().Views++;
+
+            this.threads.SaveChanges();
+            
+
+            var thread = currentThread.ProjectTo<ThreadsViewModel>().FirstOrDefault();
+
+            return View(thread);
         }
     }
 }

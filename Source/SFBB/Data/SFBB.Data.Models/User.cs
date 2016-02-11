@@ -4,6 +4,8 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
@@ -17,6 +19,13 @@
             //This will prevent exception from UserManager.CreateAsync()
             this.CreatedOn = DateTime.Now;
         }
+
+        public ICollection<Reply> Replies { get; set; }
+
+        public ICollection<Thread> Threads { get; set; }
+
+        [MaxLength(100)]
+        public string Signature { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

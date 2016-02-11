@@ -4,9 +4,18 @@
     ViewBag.Title = @Model.Title;
 }
 <div class="container">
+    <ol class="breadcrumb">
+        <li><span class="glyphicon glyphicon-home"></span>&nbsp; @Html.ActionLink("Forum", "Index", "Home")</li>
+        <li><span>@Html.ActionLink(@Model.CategoryName, "Category", "Categories", new { id = @Model.CategoryId }, new { })</span></li>
+        <li><span>@Html.ActionLink(@Model.ForumName, "Category", "Categories", new { id = @Model.ForumId }, new { })</span></li>
+        <li class="active">@Model.Title</li>
+    </ol>
+</div>
+
+<div class="container">
     <div class="row table-bordered thread-list-border-thread-top">
         <div class="col-md-6">
-            @Model.CreatedOn
+            @Model.CreatedOn.ToShortDateString()
         </div>
         <div class="col-md-6 text-right">
             [#@(i++)]
@@ -16,14 +25,16 @@
         <div class="col-md-2" style="border-right: solid;">
             @Model.AuthorName
             <br />
-            @Model.AuthorJoinDate
+            Join date: @Model.AuthorJoinDate.ToShortDateString()
+            <br />
+            Posts: @((Model.AuthorRepliesCount) + (Model.AuthorThreadsCount))
         </div>
         <div class="col-md-10">
             @Model.Title
             <hr class="fix-thread-content" />
             @Model.Content
             <hr />
-            [Signature]
+            @Model.Signature
         </div>
     </div>
     <div class="spacer"></div>
@@ -31,7 +42,7 @@
     {
         <div class="row table-bordered thread-list-border-thread-top">
             <div class="col-md-6">
-                @reply.CreatedOn
+                @reply.CreatedOn.ToShortDateString()
             </div>
             <div class="col-md-6 text-right">
                 [#@(i++)]
@@ -41,14 +52,16 @@
             <div class="col-md-2" style="border-right: solid;">
                 @reply.AuthorName
                 <br />
-                @reply.AuthorJoinDate
+                Join date: @reply.AuthorJoinDate.ToShortDateString()
+                <br />
+                Posts: @((reply.AuthorRepliesCount) + (reply.AuthorThreadsCount))
             </div>
             <div class="col-md-10">
                 @reply.Title
                 <hr class="fix-thread-content" />
                 @reply.Content
                 <hr />
-                [Signature]
+                @reply.Signature
             </div>
         </div>
         <div class="spacer"></div>
