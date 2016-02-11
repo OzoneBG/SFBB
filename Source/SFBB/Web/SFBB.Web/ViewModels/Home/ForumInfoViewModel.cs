@@ -23,6 +23,8 @@
 
         public string LastPostName { get; set; }
 
+        public int LastPostId { get; set; }
+
         public DateTime LastPostDate { get; set; }
 
         public string LastPostUser { get; set; }
@@ -32,6 +34,7 @@
             config.CreateMap<Forum, ForumInfoViewModel>()
                 .ForMember(x => x.TotalThreads, opt => opt.MapFrom(z => z.Threads.Count))
                 .ForMember(x => x.TotalPosts, opt => opt.MapFrom(z => z.Threads.Select(c => c.Replies.Count).FirstOrDefault()))
+                .ForMember(x => x.LastPostId, opt => opt.MapFrom(z => z.Threads.OrderByDescending(p => p.CreatedOn).Select(k => k.Id).FirstOrDefault()))
                 .ForMember(x => x.LastPostName, opt => opt.MapFrom(z => z.Threads.OrderByDescending(p => p.CreatedOn).FirstOrDefault().Title))
                 .ForMember(x => x.LastPostDate, opt => opt.MapFrom(z => z.Threads.OrderByDescending(p => p.CreatedOn).Select(k => k.CreatedOn).FirstOrDefault()))
                 .ForMember(x => x.LastPostUser, opt => opt.MapFrom(z => z.Threads.OrderByDescending(p => p.CreatedOn).FirstOrDefault().Author.UserName));

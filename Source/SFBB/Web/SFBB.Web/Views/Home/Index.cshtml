@@ -35,7 +35,7 @@
                     <div class="col-md-4">
                         @if(forum.LastPostName != null)
                         {
-                            @forum.LastPostName <br />
+                            @Html.ActionLink(forum.LastPostName, "Thread", "Threads", new { id = forum.LastPostId }, new { }) <br />
                             @forum.LastPostUser <br /> @forum.LastPostDate
                         }
                         else
