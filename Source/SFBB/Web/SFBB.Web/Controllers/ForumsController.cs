@@ -5,9 +5,9 @@
 
     using AutoMapper.QueryableExtensions;
 
-    using SFBB.Data.Common.Repository;
-    using SFBB.Data.Models;
-    using SFBB.Web.ViewModels.Threads;
+    using Data.Common.Repository;
+    using Data.Models;
+    using ViewModels.Threads;
 
     public class ForumsController : Controller
     {

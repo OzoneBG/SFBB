@@ -67,3 +67,15 @@ div > p {
 .fix-thread-content {
     margin-top: 5px;
 }
+
+.forums-content {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 10px;
+    box-shadow: 10px 10px 5px #000000;
+}
+
+.category-heading {
+    background: rgb(47, 47, 47);
+    box-shadow: 5px 2px 5px #000000;
+    color: orange;
+}

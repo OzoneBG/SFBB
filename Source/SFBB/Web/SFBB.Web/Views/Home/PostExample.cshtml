@@ -1,0 +1,22 @@
+﻿@model string
+@{
+    ViewBag.Title = "PostExample";
+}
+
+@{
+    if (string.IsNullOrEmpty(Model))
+    {
+        <h2>Enter your name:</h2>
+        <form action="/Home/PostExample" method="post">
+            <input type="text" name="output" />
+            <input type="submit" name="Send" />
+        </form>
+    }
+    else
+    {
+        <center><p>@Model</p></center>
+    }
+}
+
+
+

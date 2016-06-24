@@ -5,8 +5,7 @@
     using System.Data.Entity.Infrastructure;
     using System.Linq;
 
-    using SFBB.Data.Common;
-    using SFBB.Data.Common.Models;
+    using Models;
 
     public class DeletableEntityRepository<T> : GenericRepository<T>, IDeletableEntityRepository<T>
         where T : class, IDeletableEntity

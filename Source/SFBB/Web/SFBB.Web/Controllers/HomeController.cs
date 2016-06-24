@@ -49,5 +49,19 @@
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult PostExample()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PostExample(string output)
+        {
+            string finalOutput = "Welcome to our forum " + output + ".";
+
+            return View((object)finalOutput);
+        }
     }
 }

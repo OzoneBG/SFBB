@@ -10,4 +10,9 @@ TODO
 	* Post new thread
 	* Reply to a thread
 	* Edit profile
+	
+* Graphics
+	* Update ui for:
+		* Category forums
+		* Forum posts
 
