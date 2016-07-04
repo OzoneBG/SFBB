@@ -21,7 +21,7 @@
         }
 
         // GET: Forums
-        public ActionResult Forum(int id)
+        public ActionResult Index(int id)
         {
             var model = this.forums.All().Where(x => x.Id == id).ProjectTo<ThreadsByForumViewModel>().FirstOrDefault();
 

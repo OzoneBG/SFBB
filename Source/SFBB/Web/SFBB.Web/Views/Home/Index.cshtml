@@ -16,7 +16,7 @@
             <div class="col-md-2">Threads/Posts</div>
             <div class="col-md-3">Last post</div>
             <div class="col-md-1 text-right">
-                <div data-toggle="collapse" data-target="#wrapper@(i)" class="glyphicon glyphicon-chevron-up" onclick=""></div>
+                <div data-toggle="collapse" data-target="#wrapper@(i)" class="glyphicon glyphicon-chevron-up toggleable" onclick=""></div>
             </div>
         </div>
         <div id="wrapper@(i++)" class="collapse in forums-content">
@@ -25,7 +25,7 @@
                 <div class="row forum-spacing">
                     <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
                     <div class="col-md-5">
-                        <p class="">@Html.ActionLink(forum.Title, "Forum", "Forums", new { id = forum.Id }, new { })</p>
+                        <p class="">@Html.ActionLink(forum.Title, "", "Forums", new { id = forum.Id, forum.Title }, new { })</p>
                         <small>@forum.Description</small>
                     </div>
                     <div class="col-md-2">

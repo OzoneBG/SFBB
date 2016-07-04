@@ -10,7 +10,7 @@
         <li class="active"><span>@Model.Title</span></li>
     </ol>
 </div>
-
+<center><h2>@Model.Title</h2></center>
 <div class="container">
     @{
         if (Model.Threads.Count == 0)
@@ -19,7 +19,7 @@
         }
         else
         {
-            <div class="wrapper">
+            <div class="wrapper forums-content">
                 @foreach (var thread in Model.Threads)
                 {
                     <div class="row no-pad">

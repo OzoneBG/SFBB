@@ -281,7 +281,7 @@
     <Content Include="Views\Home\Rules.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Categories\Category.cshtml" />
-    <Content Include="Views\Forums\Forum.cshtml" />
+    <Content Include="Views\Forums\Index.cshtml" />
     <Content Include="Views\Threads\Thread.cshtml" />
     <Content Include="Views\Home\PostExample.cshtml" />
   </ItemGroup>

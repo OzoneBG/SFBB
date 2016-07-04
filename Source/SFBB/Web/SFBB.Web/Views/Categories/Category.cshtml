@@ -21,32 +21,34 @@
                 <div class="col-md-2">Threads/Posts</div>
                 <div class="col-md-4">Last post</div>
             </div>
-            @foreach (var forum in Model.Forums)
-            {
-                <div class="row no-pad">
-                    <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
-                    <div class="col-md-5">
-                        <p>@Html.ActionLink(forum.Title, "Forum", "Forums", new { id = forum.Id }, new { })</p>
-                        <p>@forum.Description</p>
+            <div class="forums-content">
+                @foreach (var forum in Model.Forums)
+                {
+                    <div class="row no-pad">
+                        <div class="col-md-1 text-center"><img src="~/Assets/Images/DefaultForumIcon.ico" width="48" height="48" /></div>
+                        <div class="col-md-5">
+                            <p>@Html.ActionLink(forum.Title, "Forum", "Forums", new { id = forum.Id }, new { })</p>
+                            <p>@forum.Description</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>Threads: @forum.TotalThreads</p>
+                            <p>Posts: @(forum.TotalThreads + forum.TotalReplies)</p>
+                        </div>
+                        <div class="col-md-4">
+                            @if (forum.LastPostName != null)
+                            {
+                                @forum.LastPostName <br />
+                                @forum.LastPostUser <br />
+                                @forum.LastPostDate
+                            }
+                            else
+                            {
+                                @:No threads started.
+                            }
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <p>Threads: @forum.TotalThreads</p>
-                        <p>Posts: @(forum.TotalThreads + forum.TotalReplies)</p>
-                    </div>
-                    <div class="col-md-4">
-                        @if (forum.LastPostName != null)
-                        {
-                            @forum.LastPostName <br />
-                            @forum.LastPostUser <br />
-                            @forum.LastPostDate
-                        }
-                        else
-                        {
-                            @:No threads started.
-                        }
-                    </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     }
 </div>
